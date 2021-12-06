@@ -35,19 +35,29 @@ namespace SpinningDiscs
 
         public void DeleteFile(File file)
         {
-            
-            try
-            { 
-                Volume.Remove(file);
-                Console.WriteLine($"{file.Name} has been removed.");
+            if (IsReWritable)
+
+            {
+                try
+                {
+                    Volume.Remove(file);
+                    Console.WriteLine($"{file.Name} has been removed.");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("No such file exists");
+                }
             }
-            catch (Exception e) 
-            { 
-                Console.WriteLine("No such file exists");
+            else
+            {
+                Console.WriteLine("This disk is not Rewrittable");
             }
         }
 
-        public void SpinDisk()
+        public abstract void SpinDisk();
+        
+
+        public void DisplayContent()
         {
             Console.WriteLine($"\n\n\tVolume: {Name}\n\n" +
                 $"\t\t# of Files: {Volume.Count}\n\n" +

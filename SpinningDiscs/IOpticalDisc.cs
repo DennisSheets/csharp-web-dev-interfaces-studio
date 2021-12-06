@@ -9,6 +9,7 @@ namespace SpinningDiscs
         public void Burn(File file);
         public void DeleteFile(File file);
         public void SpinDisk();
+        public void DisplayContent();
         public void OpenFile(int index);
         public int AvailableSpace();
 

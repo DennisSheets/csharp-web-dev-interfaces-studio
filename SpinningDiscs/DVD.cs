@@ -14,5 +14,11 @@ namespace SpinningDiscs
             Capacity = 4700;
             Speed = 16;
         }
+
+        public override void SpinDisk()
+        {
+            Console.WriteLine("A DVD spins at a rate of 570 - 1600 rpm.");
+
+        }
     }
 }

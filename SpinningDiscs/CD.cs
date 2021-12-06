@@ -14,6 +14,11 @@ namespace SpinningDiscs
             Capacity = 734;
             Speed = 52;
         }
-       
+
+        public override void SpinDisk()
+        {
+            Console.WriteLine("A CD spins at a rate of 200 - 500 rpm");
+        }
+
     } 
 }

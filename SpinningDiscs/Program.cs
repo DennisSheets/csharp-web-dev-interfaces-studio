@@ -29,9 +29,11 @@ namespace SpinningDiscs
 
             // TODO: Call each CD and DVD method to verify that they work as expected.
             cd1.SpinDisk();
+            dvd1.SpinDisk();
+            cd1.DisplayContent();
             cd1.OpenFile(1);
             cd1.DeleteFile(file4);
-            cd1.SpinDisk();
+            cd1.DisplayContent();
         }
     }
 }
