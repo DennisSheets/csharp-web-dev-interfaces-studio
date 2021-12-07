@@ -6,7 +6,7 @@ namespace SpinningDiscs
 {
     public abstract class StorageDisk : IOpticalDisc
     {
-        private static int NextID = 1;
+        private static int nextID = 1;
         public int ID { get; }
         public double Speed { get; set; }
         public int Capacity { get; set; }
@@ -19,8 +19,8 @@ namespace SpinningDiscs
         {
             Name = name;
             Volume = new List<File>();
-            ID = NextID;
-            NextID++;
+            ID = nextID;
+            nextID++;
         }
 
         protected StorageDisk(string name, int capacity)

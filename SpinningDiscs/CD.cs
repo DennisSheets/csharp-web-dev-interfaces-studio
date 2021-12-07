@@ -9,11 +9,19 @@ namespace SpinningDiscs
         // TODO: Determine which fields, methods, and constructors can be extended from the base class and which ones
         //  need to be declared separately. 
         
+
         public CD(string name) : base(name)
         {
             Capacity = 734;
             Speed = 52;
         }
+        public CD(string name, int capacity) : base(name)
+        {
+            Capacity = capacity;
+            Speed = 52;
+        }
+
+
 
         public override void SpinDisk()
         {

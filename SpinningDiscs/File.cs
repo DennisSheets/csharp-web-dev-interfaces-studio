@@ -6,7 +6,7 @@ namespace SpinningDiscs
 {
     public class File
     {
-        public int NextID = 1;
+        public static int nextID = 1;
         public int ID { get;}
         public string Name { get; set; }
         public int Size { get; set; }
@@ -19,8 +19,8 @@ namespace SpinningDiscs
             Content = content;
             Size = size;
             Type = type;
-            ID = NextID;
-            NextID++;
+            ID = nextID;
+            nextID++;
         }
 
 
