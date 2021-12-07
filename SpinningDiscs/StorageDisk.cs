@@ -15,15 +15,6 @@ namespace SpinningDiscs
         public bool IsWritable { get; set; } = true;
         public bool IsReWritable { get; set; } = true;
 
-
-        protected StorageDisk(int capacity, string name)
-        {
-            Capacity = capacity;
-            Name = name;
-            Volume = new List<File>();
-            ID = NextID;
-            NextID++;
-        }
         public StorageDisk(string name)
         {
             Name = name;
@@ -31,6 +22,16 @@ namespace SpinningDiscs
             ID = NextID;
             NextID++;
         }
+
+        protected StorageDisk(string name, int capacity)
+        {
+            Capacity = capacity;
+            Name = name;
+            Volume = new List<File>();
+            ID = NextID;
+            NextID++;
+        }
+ 
 
 
         public void DeleteFile(File file)
@@ -78,15 +79,22 @@ namespace SpinningDiscs
 
         public void Burn(File newFile)
         {
+            if (IsWritable)
+            {
                 if (AvailableSpace() - newFile.Size <= Capacity)
                 {
                     Volume.Add(newFile);
-                    Console.WriteLine($"Added: { newFile.Name}.{newFile.Type} to Disk: {Name}");
+                    Console.WriteLine($"Added: {newFile.Name}.{newFile.Type} to Disk: {Name}");
                 }
                 else
                 {
-                    Console.WriteLine($"NOT ENOUGH SPACE! Could not add { newFile.Name}.{newFile.Type} to Disk: {Name}");
+                    Console.WriteLine($"NOT ENOUGH SPACE! Could not add {newFile.Name}.{newFile.Type} to Disk: {Name}");
                 }
+            }
+            else
+            {
+                Console.WriteLine("You can not write to this disk!!");
+            }   
         }
 
         public int AvailableSpace()

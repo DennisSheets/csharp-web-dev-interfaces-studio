@@ -9,6 +9,7 @@ namespace SpinningDiscs
             // TODO: Declare and initialize a CD and a DVD object.
 
             CD cd1 = new CD("Backup LaunchCode Documents");
+            CD cd2 = new CD("CodeCamp Exam Rubric", 50000);
             DVD dvd1 = new DVD("Backup Lecture Recodings");
             File file1 = new File("LC101 - JavaScript", 50, "pdf",
                 "This is the full set of instructions all boiled down to a few" +

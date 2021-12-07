@@ -14,6 +14,11 @@ namespace SpinningDiscs
             Capacity = 4700;
             Speed = 16;
         }
+        public DVD(string name, int capacity) : base(name)
+        {
+            Capacity = capacity;
+            Speed = 16;
+        }
 
         public override void SpinDisk()
         {
