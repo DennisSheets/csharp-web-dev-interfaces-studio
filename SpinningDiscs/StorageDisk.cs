@@ -28,8 +28,8 @@ namespace SpinningDiscs
             Capacity = capacity;
             Name = name;
             Volume = new List<File>();
-            ID = NextID;
-            NextID++;
+            ID = nextID;
+            nextID++;
         }
  
 
